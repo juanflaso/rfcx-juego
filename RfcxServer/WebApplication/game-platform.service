@@ -1,0 +1,14 @@
+[Unit]
+ Description=Rfcx Espol Game Platform ASP.NET Core App
+
+ [Service]
+ WorkingDirectory=/var/game-platform
+ ExecStart=/usr/bin/dotnet /var/game-platform/WebApplication.dll
+ Restart=always
+ RestartSec=10
+ SyslogIdentifier=dotnet-game-platform
+ Environment=ASPNETCORE_URLS=http://*:8080
+ Environment=ASPNETCORE_ENVIRONMENT=Production 
+
+ [Install]
+ WantedBy=multi-user.target
